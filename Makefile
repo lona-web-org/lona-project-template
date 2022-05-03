@@ -11,7 +11,7 @@ SHELL_SERVER_URL=file://socket
 
 # environment #################################################################
 $(PYTHON_ENV)/.created: REQUIREMENTS.txt
-	rm -rf $(PYTHON_DEV) && \
+	rm -rf $(PYTHON_ENV) && \
 	$(PYTHON) -m venv $(PYTHON_ENV) && \
 	. $(PYTHON_ENV)/bin/activate && \
 	pip install pip --upgrade && \
