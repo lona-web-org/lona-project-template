@@ -8,23 +8,27 @@
     <div id="lona"></div>
 
     {{ Lona.load_scripts() }}
-    <script>
-      var lona_context = new Lona.LonaContext({
-        target: '#lona',
-        title: 'Lona',
-        update_address_bar: true,
-        update_title: true,
-        follow_redirects: true,
-        follow_http_redirects: true,
-      });
+    <script type="module">
+      window.addEventListener('load', () => {
+        const lona_context = new Lona.LonaContext({
+          target: '#lona',
+          title: 'Lona',
+          update_address_bar: true,
+          update_title: true,
+          follow_redirects: true,
+          follow_http_redirects: true,
+        });
 
-      lona_context.add_disconnect_hook(function(lona_context, event) {
-        document.querySelector('#lona').innerHTML = `
-          <h1>Server disconnected</h1>
-        `;
-      });
+        lona_context.add_disconnect_hook(function(lona_context, event) {
+          document.querySelector('#lona').innerHTML = `
+            <h1>Server disconnected</h1>
+          `;
+        });
 
-      lona_context.setup();
+        lona_context.setup();
+
+        window['lona_context'] = lona_context;
+      });
     </script>
   </body>
 </html>
