@@ -5,7 +5,7 @@ This project is meant to be used as a starting-point for [Lona](https://lona-web
 
 ## Getting Started
 
-If you are new to Lona, a good starting-point is the [tutorial](https://lona-web.org/tutorial/index.html).
+If you are new to Lona, a good starting-point is the [tutorial](https://lona-web.org/tutorial/index.html). This template uses [lona-picocss](https://github.com/lona-web-org/lona-picocss#readme) for styling. Check its documentation for more information.
 
 ## Run The Project
 
@@ -25,6 +25,14 @@ You also can use make instead, if [GNU make](https://www.gnu.org/software/make/)
 make server
 ```
 
+The command should print that it opened a webserver on http://localhost:8080. If you navigate your browser there, you should see this:
+
+![](screenshots/lona-picocss.gif)
+
 ## Make It Your Own
 
-This projects Python package name is `lona_project`. To change that, rename the `lona_project` directory, change the name in the `setup.py` and remove the `LICENSE` file.
+This projects Python package name is `lona_project`. To change that, rename the `lona_project` directory, change the name in the `setup.py` and remove the `LICENSE` file and `screenshots` directory.
+
+To get a vanilla HTML experience without any styling, go to `settings.py` and remove the `lona-picocss` section.
+
+![](screenshots/hello-world.gif)
