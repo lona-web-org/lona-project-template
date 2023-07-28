@@ -16,9 +16,12 @@ TEMPLATE_DIRS = [
 # remove this whole section to get a vanilla HTML style
 import lona_picocss
 
+MIDDLEWARES = [
+    'lona_picocss.middlewares.LonaPicocssMiddleware',
+]
+
 TEMPLATE_DIRS.append(lona_picocss.settings.TEMPLATE_DIR)
 STATIC_DIRS.append(lona_picocss.settings.STATIC_DIR)
-FRONTEND_TEMPLATE = lona_picocss.settings.FRONTEND_TEMPLATE
 FRONTEND_TEMPLATE = lona_picocss.settings.FRONTEND_TEMPLATE
 ERROR_403_VIEW = lona_picocss.Error403View
 ERROR_404_VIEW = lona_picocss.Error404View
@@ -26,8 +29,15 @@ ERROR_500_VIEW = lona_picocss.Error500View
 
 PICOCSS_BRAND = 'lona-project-template'
 
-PICOCSS_MENU = [
-    ['Home', '!home'],
-]
 
+def get_navigation(server, request):
+    return [
+        lona_picocss.NavItem(
+            title='Home',
+            url=server.reverse('home'),
+        ),
+    ]
+
+
+PICOCSS_NAVIGATION = get_navigation
 # end lona-picocss
