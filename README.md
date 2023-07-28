@@ -9,7 +9,7 @@ If you are new to Lona, a good starting-point is the [tutorial](https://lona-web
 
 ## Run The Project
 
-Lona requires at least Python 3.7, and is built on top of aiohttp and Jinja2, so you need to be able to run pip on your system. The web application server should be compatible with any system that can run Python, but some debug features, like the debug shell, might have some problems on non-unix systems.
+Lona requires at least Python 3.8, and is built on top of aiohttp and Jinja2, so you need to be able to run pip on your system. The web application server should be compatible with any system that can run Python, but some debug features, like the debug shell, might have some problems on non-unix systems.
 
 These two commands are necessary to run Lona. The first installs all requirements, the second runs the Lona application server on localhost, port 8080. These values can be changed via command line options. Run `lona run-server -h` for details.
 
