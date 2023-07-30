@@ -1,15 +1,25 @@
 # lona-project-template
 
-This project is meant to be used as a starting-point for [Lona](https://lona-web.org/) based web-applications. This project is explicitly
-[unlicensed](https://unlicense.org/), so you can fork do whatever you want with it.
+This project is meant to be used as a starting-point for [Lona](https://lona-web.org/) based web-applications. It is explicitly
+[unlicensed](https://unlicense.org/), so you can fork it and do whatever you want with it.
 
 ## Getting Started
 
 If you are new to Lona, a good starting-point is the [tutorial](https://lona-web.org/tutorial/index.html). This template uses [lona-picocss](https://github.com/lona-web-org/lona-picocss#readme) for styling. Check its documentation for more information.
 
-## Run The Project
+## Run the project
 
-Lona requires at least Python 3.8, and is built on top of aiohttp and Jinja2, so you need to be able to run pip on your system. The web application server should be compatible with any system that can run Python, but some debug features, like the debug shell, might have some problems on non-unix systems.
+Lona requires at least Python 3.8, and is built on top of aiohttp and Jinja2, so you need to be able to run pip or Docker on your system. The web application server should be compatible with any system that can run Docker or Python, but some debug features, like the debug shell, might have some problems on non-unix systems.
+
+### Running in Docker
+
+This project is already set up with a docker file and a docker compose config.
+
+```
+docker compose up
+```
+
+### Running directly on the host system
 
 These two commands are necessary to run Lona. The first installs all requirements, the second runs the Lona application server on localhost, port 8080. These values can be changed via command line options. Run `lona run-server -h` for details.
 
